@@ -1,0 +1,44 @@
+.signup-form-item-label {
+  font-weight: 500;
+}
+
+.signup-quote-container {
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.signup-quote-mark {
+  font-size: 36px;
+  color: #e31f25;
+  font-weight: bold;
+}
+
+.signup-quote-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  font-style: italic;
+}
+
+.signup-quote-highlight {
+  font-weight: 600;
+  color: #e31f25;
+}
+
+.signup-image-gallery {
+  margin-top: 20px;
+}
+
+.signup-gallery-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 16px; /* Smooth rounded corners */
+  object-fit: cover; /* Ensures proper scaling */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds depth */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.signup-gallery-image:hover {
+  transform: scale(1.05); /* Subtle zoom effect */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+}

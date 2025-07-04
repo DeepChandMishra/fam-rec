@@ -1,0 +1,79 @@
+.user-settings-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+
+  .dropdown-wrapper {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 10px;
+    z-index: 9999;
+  }
+}
+
+
+.desktop-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: none;
+  background: transparent;
+
+  .ant-menu-item {
+    font-weight: 600;
+    font-size: 16px;
+    padding: 0 20px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .ant-menu-item-selected {
+    color: #af3c88 !important;
+    /* Match pink/magenta from screenshot */
+    font-weight: 700;
+    border-bottom: 2px solid #000000;
+    /* Single solid black underline */
+    background: transparent !important;
+  }
+
+  .ant-menu-item:hover {
+    color: #af3c88;
+    border-bottom: 2px solid #af3c88;
+    background: transparent;
+  }
+
+  .ant-menu-overflow-item-rest {
+    display: none !important;
+    /* Remove overflow indicators like • */
+  }
+
+  .ant-menu-item::after {
+    display: none !important;
+    /* Remove built-in Ant underline */
+  }
+}
+
+/* Mobile Menu */
+.mobile-menu-dropdown {
+  display: none;
+  height: 80px;
+  /* Set the header height for mobile */
+}
+
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none !important;
+  }
+
+  .mobile-menu-dropdown {
+    display: block;
+  }
+}

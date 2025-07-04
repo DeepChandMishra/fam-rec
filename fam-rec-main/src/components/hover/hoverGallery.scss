@@ -1,0 +1,150 @@
+// .hover-gallery {
+//   display: grid;
+//   position: relative;
+//   width: 100%;
+//   height: 100%;
+//   box-sizing: border-box;
+//   border-radius: 10px;
+//   animation: fadeIn 0.3s ease-in;
+//   overflow: hidden;
+
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     inset: 0;
+//     background: url('/src/assets/image2.png') center/cover no-repeat;
+//     filter: grayscale(100%) contrast(120%);
+//     z-index: 0;
+//   }
+
+//   .precise-collage {
+//     position: relative;
+//     z-index: 1;
+//   }
+// }
+
+.hover-gallery {
+  display: grid;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.95);
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  animation: fadeIn 0.3s ease-in;
+  overflow: hidden;
+}
+
+
+.precise-collage {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 8px;
+  height: 100%;
+  width: 100%;
+}
+
+.col-1 .tall-item,
+.col-2 .half-item,
+.col-3 .middle-item,
+.col-4 .half-item {
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.tall-item {
+  height: 100%;
+}
+
+.middle-item {
+  height: 75%;
+  margin-top: 12.5%;
+}
+
+.col-2,
+.col-4 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .half-item {
+    flex: 1;
+    height: calc(50% - 4px);
+  }
+}
+
+.tall-item:hover,
+.half-item:hover,
+.middle-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  z-index: 2;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .precise-collage {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .col-1 {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .col-2 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .col-3 {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .col-4 {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .precise-collage {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .col-1 .tall-item {
+    height: 300px;
+  }
+
+  .col-2,
+  .col-4 {
+    flex-direction: row;
+    height: 150px;
+
+    .half-item {
+      width: 50%;
+      height: 100%;
+    }
+  }
+
+  .col-3 .middle-item {
+    height: 225px;
+    margin: 0 auto;
+    width: 75%;
+  }
+}
